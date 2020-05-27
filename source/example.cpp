@@ -88,18 +88,18 @@ int main(int argc, char* argv[])
 
 			float second = 6.315f;
 			// Sekundenzeiger:
-			float x1 = 400.f + 330.f * std::sin(-second / 60 * t);
-			float y1 = 400.f + 330.f * std::cos(-second / 60 * t);
+			float x1 = 400.f + 330.f * std::sin(-second / 60 * (t + 746));
+			float y1 = 400.f + 330.f * std::cos(-second / 60 * (t + 746));
 			win.draw_line(x1, y1, 400, 400, 0, 0, 0);
 
 			//Minutenzeiger:
-			float x2 = 400.f + 330.f * std::sin(-second / 60 / 60 * t);
-			float y2 = 400.f + 330.f * std::cos(-second / 60 / 60 * t);
+			float x2 = 400.f + 330.f * std::sin(-second / 60 / 60 * (t + 1790));
+			float y2 = 400.f + 330.f * std::cos(-second / 60 / 60 * (t + 1790));
 			win.draw_line(x2, y2, 400, 400, 1, 1, 1);
 
 			//Stundenzeiger:
-			float x3 = 400.f + 330.f * std::sin(-second / 60 / 360 * t);
-			float y3 = 400.f + 330.f * std::cos(-second / 60 / 360 * t);
+			float x3 = 400.f + 330.f * std::sin(-second / 60 / 360 * (t + 96700));
+			float y3 = 400.f + 330.f * std::cos(-second / 60 / 360 * (t + 96700));
 			win.draw_line(x3, y3, 400, 400, 0, 0, 0);
 
 		}
