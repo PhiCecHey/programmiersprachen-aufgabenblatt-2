@@ -8,7 +8,7 @@
 
 int main(int argc, char* argv[])
 {
-	bool clock = true;
+	bool clock = false;
 
 	Window win{ std::make_pair(800,800) };
 
