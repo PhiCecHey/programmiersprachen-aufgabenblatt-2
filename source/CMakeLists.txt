@@ -32,4 +32,9 @@ target_link_libraries(tests
   ${OPENGL_LIBRARIES}
   )
 
+# Build a_2_3
+add_executable(a_2_3
+  a_2_3.cpp
+  )
+
 
