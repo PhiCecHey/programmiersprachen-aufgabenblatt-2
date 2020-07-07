@@ -2,7 +2,7 @@
 #include "rechteck.hpp"
 #include "vec2.hpp" 
 #include "pair.hpp"
-#include "window.hpp"
+//#include "window.hpp"
 
 #include <iostream>
 
@@ -55,7 +55,7 @@ float Rechteck::circumference() const {
 	return (a.a + a.b) * 2;
 }
 
-void Rechteck::draw(Window& window, float const& thickness) const {
+/*void Rechteck::draw(Window& window, float const& thickness) const {
 	float line = thickness;
 	if (is_inside(window, *this)) {
 		line *= 2;
@@ -101,4 +101,4 @@ bool is_inside(Window & window, Rechteck const& rechteck) {
 		return true;
 	}
 	return false;
-}
+}*/

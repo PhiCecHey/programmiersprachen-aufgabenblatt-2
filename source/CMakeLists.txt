@@ -37,4 +37,13 @@ add_executable(a_2_3
   a_2_3.cpp
   )
 
+# Build a_5
+add_executable(a_5
+  a_5.cpp  
+  vec2.cpp
+  mat2.cpp
+  kreis.cpp
+  rechteck.cpp
+  )
+
 

@@ -1,7 +1,7 @@
 #include "vec2.hpp" 
 #include "color.hpp" 
 #include "pair.hpp"
-#include "window.hpp"
+//#include "window.hpp"
 
 #ifndef RECHTECK_HPP
 #define RECHTECK_HPP
@@ -17,8 +17,8 @@ public:
 
 	Pair side_lenghs() const;
 	float circumference() const;
-	void draw(Window& window) const;
-	void draw(Window& window, float const& thickness) const;
+	//void draw(Window& window) const;
+	//void draw(Window& window, float const& thickness) const;
 	
 private:
 	Vec2 min_; //linke untere Ecke
@@ -26,6 +26,6 @@ private:
 	Color color_;
 };
 
-bool is_inside(Window& window, Rechteck const& rechteck);
+//bool is_inside(Window& window, Rechteck const& rechteck);
 
 #endif
