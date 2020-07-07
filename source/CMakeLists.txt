@@ -46,4 +46,9 @@ add_executable(a_5
   rechteck.cpp
   )
 
+# Build a_8
+add_executable(a_8
+  a_8.cpp
+  )
+
 
