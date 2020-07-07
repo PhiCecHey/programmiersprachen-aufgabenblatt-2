@@ -44,6 +44,17 @@ std::vector<T> filter(std::vector<T> v1, std::function<bool(T t)> f) {
 	return v2;
 }
 
+// 4.13
+TEST_CASE("4.13", "[4.13]") {
+	std::vector<Kreis> circles{ {5.0f}, {3.0f}, {8.0f}, {1.0f}, {5.0f} };
+	std::vector<Kreis> v;
+	std::copy_if(circles.begin(), circles.end(), std::back_inserter(v), [](Kreis x) {return x.radius() > 4.0f; });
+
+	REQUIRE(std::all_of(v.begin(), v.end(), [](Kreis x) {return x.radius() > 4.0f; }));
+}
+
+
+
 int main(int argc, char* argv[]) {
 	return Catch::Session().run(argc, argv);
 }
