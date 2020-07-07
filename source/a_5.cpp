@@ -38,6 +38,17 @@ TEST_CASE("sort circles 4.6", "[sort 4.6]") {
 	REQUIRE(std::is_sorted(sorted_circles.begin(), sorted_circles.end()));
 }
 
+// 4.7
+TEST_CASE("sort circles 4.7", "[sort 4.7]") {
+	std::set<Kreis, lessKreis> s({ {1}, {3}, {5}, {2}, {2} }, lessKreis{});
+	//s.insert({ 1 });
+	//s.insert({ 3 });
+	//s.insert({ 5 });
+	//s.insert({ 2 });
+	//s.insert({ 2 });
+	REQUIRE(std::is_sorted(s.begin(), s.end()));
+}
+
 int main(){
 return 0;
 }
