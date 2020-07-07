@@ -53,6 +53,19 @@ TEST_CASE("4.13", "[4.13]") {
 	REQUIRE(std::all_of(v.begin(), v.end(), [](Kreis x) {return x.radius() > 4.0f; }));
 }
 
+// 4.14
+void a_14() {
+	Kreis a{ {0.0f, 0.0f}, {1.0f}, {0.5f, 0.5f, 0.5f}, {"a"} };
+	a.print();
+	Kreis b{ {-1.0f, -1.0f}, {2.0f}, {0.5f, 0.5f, 0.5f}, {"b"} };
+	b.print();
+	Kreis c{ {1.0f, 2.0f}, {3.0f}, {0.5f, 0.5f, 0.5f}, {"c"} };
+	b.print();
+}
+
+TEST_CASE("4.14", "[4.14]") {
+	a_14();
+}
 
 
 int main(int argc, char* argv[]) {
