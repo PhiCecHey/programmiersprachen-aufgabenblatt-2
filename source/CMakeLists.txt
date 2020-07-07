@@ -51,4 +51,8 @@ add_executable(a_8
   a_8.cpp
   )
 
+# Build a_10
+add_executable(a_10
+  a_10.cpp
+  )
 
