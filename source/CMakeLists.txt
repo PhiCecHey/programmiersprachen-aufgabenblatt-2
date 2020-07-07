@@ -37,9 +37,9 @@ add_executable(a_2_3_9
   a_2_3_9.cpp
   )
 
-# Build a_5
-add_executable(a_5
-  a_5.cpp  
+# Build a_5_6_7
+add_executable(a_5_6_7
+  a_5_6_7.cpp  
   vec2.cpp
   mat2.cpp
   kreis.cpp
