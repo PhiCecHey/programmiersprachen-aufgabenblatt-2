@@ -117,6 +117,27 @@ std::vector<unsigned int> a_2_3(bool print) {
 	return v;
 }
 
+bool a_9(std::vector<unsigned int>& v) {
+	bool test_case = true;
+	std::list<unsigned int> l(std::cbegin(v), std::cend(v));
+	std::cout << l.size() << "\n";
+	auto l_front = l.begin();
+	std::advance(l_front, 90);
+	std::cout << *l_front << " vs " << v[90] << "\n";
+	for (int i = 1; i < 10; ++i) {
+		std::advance(l_front, 1);
+		std::cout << *l_front << " vs " << v.at(90 + i) << "\n";
+		if (*l_front != v.at(90 + i)) test_case = false;
+	}
+	return test_case;
+}
+
+TEST_CASE("4.9", "[4.9]") {
+	std::vector<unsigned int> v = a_2_3(false);
+	bool test_case = a_9(v);
+	REQUIRE(test_case == true);
+}
+
 int main(int argc, char* argv[]) {
 	return Catch::Session().run(argc, argv);
 }
