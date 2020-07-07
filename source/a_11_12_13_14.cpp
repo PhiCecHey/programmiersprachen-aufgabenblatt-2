@@ -17,6 +17,7 @@
 #include <list>
 #include <algorithm>
 #include <stdlib.h>
+#include <functional>
 
 // 4.11
 TEST_CASE("4.11", "[4.11]") {
@@ -29,6 +30,19 @@ TEST_CASE("4.11", "[4.11]") {
 	REQUIRE(std::all_of(v_3.begin(), v_3.end(), [](int x) {return x == 10; }));
 }
 
+// 4.12
+bool is_even(int n) { return n % 2 == 0; }
+
+template<typename T>
+std::vector<T> filter(std::vector<T> v1, std::function<bool(T t)> f) {
+	std::vector<T> v2;
+	for (auto i : v1) {
+		if (f(i)) {
+			v2.push_back(i);
+		}
+	}
+	return v2;
+}
 
 int main(int argc, char* argv[]) {
 	return Catch::Session().run(argc, argv);
