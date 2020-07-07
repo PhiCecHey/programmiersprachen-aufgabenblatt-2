@@ -35,6 +35,13 @@ Kreis::Kreis(float radius) :
 	radius_{ radius }
 {}
 
+Kreis::Kreis(Vec2 const& center, float radius, Color const& color, std::string name) :
+	center_{ center },
+	radius_{ radius },
+	color_{ color },
+	name_{name}
+{}
+
 bool Kreis::operator<(Kreis const& r) const
 {
 	return radius_ < r.radius_;
@@ -48,6 +55,10 @@ bool Kreis::operator>(Kreis const& r) const
 bool Kreis::operator==(Kreis const& r) const
 {
 	return radius_ == r.radius_;
+}
+
+void Kreis::print() const{
+	std::cout << *this;
 }
 
 /*
@@ -70,6 +81,20 @@ float Kreis::circumference() const {
 
 float Kreis::radius() const {
 	return radius_;
+}
+
+Vec2 Kreis::center() const
+{
+	return center_;
+}
+
+Color Kreis::color() const
+{
+	return color_;
+}
+
+std::string Kreis::name() const {
+	return name_;
 }
 
 /*void Kreis::draw(Window& window, float const& thickness) const {
@@ -145,4 +170,8 @@ Rechteck Kreis::bounding_box() const {
 	return false;
 }*/
 
-
+std::ostream& operator<<(std::ostream & os, Kreis const& c) {
+	return os << " Name: " << c.name() << " Mittelpunkt: " << c.center().x << " " << c.center().y
+		<< " | Radius: " << c.radius() << " Farbe: " << c.color().r << " " << c.color().g <<
+		" " << c.color().b << "\n";
+}
